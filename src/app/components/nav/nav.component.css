@@ -6,3 +6,14 @@ div {
 a {
   margin: 5px 10px;
 }
+
+.mat-icon {
+  height: 37px;
+  width: 37px;
+  align-self: center;
+}
+
+.x-container {
+  align-items: center;
+  cursor: pointer;
+}

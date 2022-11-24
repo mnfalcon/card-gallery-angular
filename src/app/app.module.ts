@@ -12,7 +12,8 @@ import {MatCardModule} from "@angular/material/card";
 import { NavComponent } from './components/nav/nav.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatButtonModule} from "@angular/material/button";
-import {MatIconModule} from "@angular/material/icon";
+import {MatIconModule, MatIconRegistry} from "@angular/material/icon";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -31,8 +32,9 @@ import {MatIconModule} from "@angular/material/icon";
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [MatIconRegistry],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

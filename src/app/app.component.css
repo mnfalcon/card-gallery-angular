@@ -4,8 +4,16 @@ mat-sidenav-content {
 }
 
 .toggle-nav-button {
-  position: absolute;
   color: #3f51b5;
   background-color: #fafafa;
   max-height: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.mat-icon {
+  height: 37px;
+  width: 37px;
 }

@@ -1,10 +1,10 @@
 
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
-    <app-nav></app-nav>
+  <mat-sidenav mode="side" [opened]="sidenavOpen">
+    <app-nav [(sidenavOpen)]="sidenavOpen"></app-nav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-icon class="toggle-nav-button">fa-solid fa-bars</mat-icon>
+    <a><mat-icon [color]="'primary'" *ngIf="!sidenavOpen" (click)="toggleMenu()" svgIcon="menu" class="toggle-nav-button"></mat-icon></a>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
