@@ -1,1 +1,9 @@
+.cards-container {
+  display: flex;
+  flex-direction: row;
+}
 
+app-card {
+  margin: 1.5%;
+  border-radius: 20px;
+}

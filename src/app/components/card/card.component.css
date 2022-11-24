@@ -1,4 +1,6 @@
-mat-card {
-  max-width: 200px;
-  margin: 2.5%;
+
+img {
+  width: 240px;
+  height: 340px;
+  object-fit: cover;
 }

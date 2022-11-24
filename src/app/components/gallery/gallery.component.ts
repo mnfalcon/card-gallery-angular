@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Card} from "../../model/card.model";
+import {CardService} from "../../services/card-service.service";
 
 @Component({
   selector: 'app-gallery',
@@ -8,6 +9,7 @@ import {Card} from "../../model/card.model";
 })
 export class GalleryComponent implements OnInit {
 
+  isLoaded: boolean = false;
   cards: Card[] = [
     {
       "title": 'Knight',
@@ -17,9 +19,13 @@ export class GalleryComponent implements OnInit {
       "healthPoints": 5
     }
   ];
-  constructor() { }
+  constructor(private cardService: CardService) { }
 
   ngOnInit(): void {
+    this.cardService.findAll().subscribe(res => {
+      this.cards = res as Card[];
+      this.isLoaded = true;
+    });
   }
 
 }
