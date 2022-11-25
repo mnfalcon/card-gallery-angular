@@ -12,7 +12,12 @@ mat-sidenav-content {
 }
 
 .router-outlet {
-  margin-top: 5%;
+  overflow-y: scroll;
+  height: 950px;
+}
+
+.router-outlet::-webkit-scrollbar {
+  display: none;
 }
 
 .toggle-nav-button {
