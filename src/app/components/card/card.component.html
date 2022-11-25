@@ -4,10 +4,10 @@
   <p > {{ card.description }}</p>
   <div class="icon-container">
     <a class="edit-icon icon" (click)="onEdit()">
-      <mat-icon [color]="'accent'" svgIcon="edit"></mat-icon>
+      <mat-icon [color]="buttonColorEdit" svgIcon="edit" (mouseenter)="toggleColorEdit()" (mouseleave)="toggleColorEdit()"></mat-icon>
     </a>
     <a class="delete-icon icon" (click)="onDelete()">
-      <mat-icon [color]="'accent'" svgIcon="delete"></mat-icon>
+      <mat-icon [color]="buttonColorDelete" svgIcon="delete" (mouseenter)="toggleColorDelete()" (mouseleave)="toggleColorDelete()"></mat-icon>
     </a>
   </div>
 </mat-card>

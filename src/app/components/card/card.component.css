@@ -23,8 +23,15 @@ img {
 }
 
 .icon-container {
+  background: rgba(228,228,228,0);
+  background: linear-gradient(51deg,rgba(228,228,228,0) 0%, rgba(83,83,83,0.82) 50%);
+  background: -webkit-linear-gradient(51deg,rgba(228,228,228,0) 0%, rgba(83,83,83,0.82) 50%);
+  background: -moz-linear-gradient(51deg,rgba(228,228,228,0) 0%, rgba(83,83,83,0.82) 50%);
   position: relative;
-  bottom: 428px;
+  bottom: 440px;
+  padding-right: 50px;
+  padding-top: 10px;
+  border-radius: 7px;
   left: 170px;
   width: 50px;
   display: flex;

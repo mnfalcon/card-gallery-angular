@@ -19,6 +19,8 @@ export class CardComponent implements OnInit {
   @Output()
   editChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @ViewChild(MatRipple) matRipple: MatRipple;
+  buttonColorDelete: string = 'primary';
+  buttonColorEdit: string = 'primary';
 
   constructor(private router: Router,
               private dialog: MatDialog,
@@ -71,5 +73,21 @@ export class CardComponent implements OnInit {
         exitDuration: 500
       }
     });
+  }
+
+  toggleColorEdit() {
+    if (this.buttonColorEdit === 'primary') {
+      this.buttonColorEdit = 'accent';
+    } else {
+      this.buttonColorEdit = 'primary';
+    }
+  }
+
+  toggleColorDelete() {
+    if (this.buttonColorDelete === 'primary') {
+      this.buttonColorDelete = 'accent';
+    } else {
+      this.buttonColorDelete = 'primary';
+    }
   }
 }
