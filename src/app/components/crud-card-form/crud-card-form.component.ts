@@ -13,6 +13,8 @@ import {SnackbarCommonsService} from "../../services/snackbar-commons.service";
 export class CrudCardFormComponent implements OnInit {
 
   isEdit: boolean;
+  @Input()
+  cardId: number | undefined;
   card: Card;
   form: FormGroup;
   error: any;
@@ -26,8 +28,16 @@ export class CrudCardFormComponent implements OnInit {
               private snackbar: SnackbarCommonsService ) { }
 
   ngOnInit(): void {
-    this.isLoaded = true;
-    this.buildForm();
+    if (this.isEdit) {
+      this.cardService.getById(this.cardId).subscribe({ next: res => {
+          this.card = res as Card;
+          this.buildForm();
+          this.isLoaded = true;
+        }});
+    } else {
+      this.buildForm();
+      this.isLoaded = true;
+    }
   }
 
   private buildForm() {
@@ -46,24 +56,27 @@ export class CrudCardFormComponent implements OnInit {
 
     if (this.isEdit) {
       this.cardService.update(this.card.id, formValue).subscribe({ next: res => {
-        this.snackbar.displayMessage("Updated successfully");
-        this.afterSave.emit();
-        this.router.navigate(['cards']);
-      }, error: (err: any) => {
-        this.error = err;
-        return;
-      },
-      complete: () => {}})
+          this.snackbar.displayMessage("Updated successfully");
+          this.afterSave.emit();
+          this.router.navigate(['cards']);
+        }, error: (err: any) => {
+          this.error = err;
+          return;
+        },
+        complete: () => {}})
     } else {
       this.cardService.save(formValue).subscribe({ next: res => {
-        this.snackbar.displayMessage("Created successfully");
-        this.afterSave.emit();
-        this.router.navigate(['cards']);
-      },error: (err: any) => {
-        this.error = err;
-        return;
-      }})
+          this.snackbar.displayMessage("Created successfully");
+          this.afterSave.emit();
+          this.router.navigate(['cards']);
+        },error: (err: any) => {
+          this.error = err;
+          return;
+        }})
     }
   }
 
+  closeDialog() {
+    this.onClose.emit();
+  }
 }

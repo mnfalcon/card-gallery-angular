@@ -8,8 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo:'cards', pathMatch: 'full'},
   { path: 'cards', children: [
       { path: '', component: GalleryComponent },
-      { path: 'new', component: NewCardComponent },
-      { path: 'edit/:cardId', component: CrudCardFormComponent }
+      { path: 'new', component: NewCardComponent }
     ]},
 ]
 

@@ -21,6 +21,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatDialogModule} from "@angular/material/dialog";
 import { NewCardComponent } from './components/new-card/new-card.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -32,23 +33,24 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
     NewCardComponent,
     ConfirmationDialogComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    HttpClientModule,
-    MatProgressSpinnerModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSnackBarModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatSidenavModule,
+        MatButtonModule,
+        MatIconModule,
+        HttpClientModule,
+        MatProgressSpinnerModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSnackBarModule,
+        MatDialogModule,
+        MatRippleModule
+    ],
   providers: [MatIconRegistry],
   bootstrap: [AppComponent]
 })

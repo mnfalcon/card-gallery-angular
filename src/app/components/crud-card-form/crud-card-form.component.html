@@ -1,6 +1,10 @@
 <div class="form-container">
   <mat-spinner class="loading-spinner" *ngIf="!isLoaded"></mat-spinner>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="isLoaded">
+    <div class="title-container-with-x">
+      <h1 class="mat-card-title">{{ this.isEdit ? "Edit" : "New" }}</h1>
+      <a><mat-icon class="x-icon" (click)="closeDialog()" [color]="'accent'" svgIcon="x"></mat-icon></a>
+    </div>
     <mat-error *ngIf="error">
       {{error}}
     </mat-error>

@@ -4,6 +4,20 @@ form {
   flex-direction: column;
 }
 
-/*.form-container {*/
-/*  margin: 5%;*/
-/*}*/
+.loading-spinner {
+  align-self: center;
+  margin: auto;
+}
+
+.title-container-with-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 25px;
+  position: relative;
+}
+
+.x-icon {
+  cursor: pointer;
+}
