@@ -1,13 +1,19 @@
 mat-card {
   max-width: 240px;
-  max-height: 540px;
+  max-height: 445px;
   overflow: hidden;
-  min-height: 445px;
+  height: 445px;
 }
 
 p {
+  height: 40px;
   max-width: 184px;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: visible;
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 img {
@@ -16,10 +22,15 @@ img {
   object-fit: cover;
 }
 
-.edit-icon {
+.icon-container {
   position: relative;
-  float: right;
-  bottom: 390px;
-  left: 15px;
+  bottom: 428px;
+  left: 170px;
+  width: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon {
   cursor: pointer;
 }

@@ -20,6 +20,7 @@ import {MatInputModule} from "@angular/material/input";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatDialogModule} from "@angular/material/dialog";
 import { NewCardComponent } from './components/new-card/new-card.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NewCardComponent } from './components/new-card/new-card.component';
     CrudCardFormComponent,
     CardComponent,
     NavComponent,
-    NewCardComponent
+    NewCardComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,

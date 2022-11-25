@@ -4,6 +4,8 @@ import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {CrudCardFormComponent} from "../crud-card-form/crud-card-form.component";
 import {CardService} from "../../services/card-service.service";
+import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
+import {SnackbarCommonsService} from "../../services/snackbar-commons.service";
 
 @Component({
   selector: 'app-card',
@@ -17,7 +19,8 @@ export class CardComponent implements OnInit {
   editChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor(private router: Router,
               private dialog: MatDialog,
-              private cardService: CardService) {
+              private cardService: CardService,
+              private snackbar: SnackbarCommonsService) {
   }
 
   ngOnInit(): void {
@@ -38,4 +41,16 @@ export class CardComponent implements OnInit {
     }});
   }
 
+  onDelete() {
+    let dialogRef = this.dialog.open(ConfirmationDialogComponent, {width: '500px'});
+    dialogRef.componentInstance.afterAction.subscribe({next: () => {
+        this.cardService.deleteById(this.card.id).subscribe({next: (res) => {
+          this.snackbar.displayMessage("Deleted successfully");
+          dialogRef.close();
+          }})
+      }})
+    dialogRef.componentInstance.afterGoBack.subscribe({next: () => {
+        dialogRef.close();
+      }})
+  }
 }

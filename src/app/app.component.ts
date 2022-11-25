@@ -21,6 +21,8 @@ export class AppComponent {
       .bypassSecurityTrustResourceUrl("assets/icons/edit.svg"));
     this.matIconRegistry.addSvgIcon("plus", this.domSanitizer
       .bypassSecurityTrustResourceUrl("assets/icons/plus.svg"));
+    this.matIconRegistry.addSvgIcon("delete", this.domSanitizer
+      .bypassSecurityTrustResourceUrl("assets/icons/delete.svg"));
   }
 
   toggleMenu() {

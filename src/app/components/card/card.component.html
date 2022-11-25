@@ -1,8 +1,13 @@
 <mat-card>
   <img mat-card-image [src]="card.imageUrl" alt="card image url">
     <h1 mat-card-title>{{ card.title }}</h1>
-    <a class="edit-icon" (click)="onEdit()">
+  <p > {{ card.description }}</p>
+  <div class="icon-container">
+    <a class="edit-icon icon" (click)="onEdit()">
       <mat-icon [color]="'accent'" svgIcon="edit"></mat-icon>
     </a>
-  <p mat-card-content> {{ card.description }}</p>
+    <a class="delete-icon icon" (click)="onDelete()">
+      <mat-icon [color]="'accent'" svgIcon="delete"></mat-icon>
+    </a>
+  </div>
 </mat-card>

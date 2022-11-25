@@ -43,7 +43,6 @@ export class CrudCardFormComponent implements OnInit {
   onSubmit() {
     this.error = undefined;
     let formValue = this.form.getRawValue();
-    formValue.guarantors = [formValue.guarantors];
 
     if (this.isEdit) {
       this.cardService.update(this.card.id, formValue).subscribe({ next: res => {
