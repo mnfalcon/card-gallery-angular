@@ -32,6 +32,7 @@ export class GalleryComponent implements OnInit {
       }})
     dialogRef.componentInstance.afterSave.subscribe({next: () => {
         dialogRef.close();
+        this.ngOnInit();
       }})
   }
 }
