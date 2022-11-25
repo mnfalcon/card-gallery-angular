@@ -2,6 +2,7 @@ mat-card {
   max-width: 240px;
   max-height: 540px;
   overflow: hidden;
+  min-height: 445px;
 }
 
 p {
