@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+import {ThemePalette} from "@angular/material/core";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent {
   title = 'cardsGallery';
   @Input()
   sidenavOpen: boolean = false;
+  navButtonColor: ThemePalette = "primary";
+  button: ThemePalette;
 
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon("menu", this.domSanitizer
@@ -27,5 +30,14 @@ export class AppComponent {
 
   toggleMenu() {
     this.sidenavOpen = !this.sidenavOpen;
+    this.toggleColorNav();
+  }
+
+  toggleColorNav() {
+    if (this.navButtonColor === "primary") {
+      this.navButtonColor = "accent";
+    } else {
+      this.navButtonColor = "primary";
+    }
   }
 }

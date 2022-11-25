@@ -3,10 +3,13 @@
   <ng-container *ngFor="let card of cards" >
     <app-card [card]="card" (editChange)="ngOnInit()"></app-card>
   </ng-container>
-  <mat-card class="add-new-card">
-    <a (click)="addNewCard()">
-      <mat-icon [color]="'primary'" svgIcon="plus"></mat-icon>
-    </a>
-  </mat-card>
+  <div class="add-new-card-container">
+    <mat-card (click)="addNewCard()" class="add-new-card" (mouseenter)="toggleColorAdd()" (mouseleave)="toggleColorAdd()">
+      <a >
+        <mat-icon [color]="buttonColorAdd" svgIcon="plus"></mat-icon>
+      </a>
+    </mat-card>
+
+  </div>
 </div>
 <mat-progress-spinner *ngIf="!isLoaded"></mat-progress-spinner>

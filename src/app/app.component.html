@@ -4,7 +4,9 @@
     <app-nav [(sidenavOpen)]="sidenavOpen"></app-nav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <a><mat-icon [color]="'primary'" *ngIf="!sidenavOpen" (click)="toggleMenu()" svgIcon="menu" class="toggle-nav-button"></mat-icon></a>
+    <a>
+      <mat-icon [color]="navButtonColor" *ngIf="!sidenavOpen" (click)="toggleMenu()" svgIcon="menu" class="toggle-nav-button" (mouseenter)="toggleColorNav()" (mouseleave)="toggleColorNav()"></mat-icon>
+    </a>
     <div class="router-outlet">
       <router-outlet></router-outlet>
     </div>

@@ -13,6 +13,8 @@ export class GalleryComponent implements OnInit {
 
   isLoaded: boolean;
   cards: Card[] = [];
+  buttonColorAdd: string = 'primary';
+
   constructor(private cardService: CardService ,
               private dialog: MatDialog) { }
 
@@ -34,5 +36,13 @@ export class GalleryComponent implements OnInit {
         dialogRef.close();
         this.ngOnInit();
       }})
+  }
+
+  toggleColorAdd() {
+    if (this.buttonColorAdd === 'primary') {
+      this.buttonColorAdd = 'accent';
+    } else {
+      this.buttonColorAdd = 'primary';
+    }
   }
 }

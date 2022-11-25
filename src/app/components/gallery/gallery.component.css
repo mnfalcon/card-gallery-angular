@@ -21,3 +21,18 @@ app-card {
   width: 25px;
   border-radius: 50%;
 }
+
+.add-new-card-container {
+  display: flex;
+  width: 240px;
+  justify-content: center;
+  margin: 1.5%;
+  height: 477px;
+  align-items: center;
+}
+
+.add-new-card:hover, app-card:hover {
+  box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 6px 17px -4px rgba(0,0,0,0.75);
+}
