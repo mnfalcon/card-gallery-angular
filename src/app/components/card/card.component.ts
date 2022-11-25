@@ -46,6 +46,7 @@ export class CardComponent implements OnInit {
     dialogRef.componentInstance.afterAction.subscribe({next: () => {
         this.cardService.deleteById(this.card.id).subscribe({next: (res) => {
           this.snackbar.displayMessage("Deleted successfully");
+          this.editChange.emit();
           dialogRef.close();
           }})
       }})
