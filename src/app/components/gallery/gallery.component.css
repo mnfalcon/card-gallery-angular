@@ -1,9 +1,22 @@
 .cards-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 app-card {
   margin: 1.5%;
   border-radius: 20px;
+}
+
+.add-new-card {
+  margin: 1.5%;
+  cursor: pointer;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
 }

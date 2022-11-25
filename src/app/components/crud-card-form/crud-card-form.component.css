@@ -1,0 +1,9 @@
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*.form-container {*/
+/*  margin: 5%;*/
+/*}*/

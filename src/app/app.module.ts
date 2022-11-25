@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import {AppRoutingModule} from "./app-routing.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CrudCardFormComponent } from './components/crud-card-form/crud-card-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './components/card/card.component';
@@ -15,6 +15,11 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule, MatIconRegistry} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDialogModule} from "@angular/material/dialog";
+import { NewCardComponent } from './components/new-card/new-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     GalleryComponent,
     CrudCardFormComponent,
     CardComponent,
-    NavComponent
+    NavComponent,
+    NewCardComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,11 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatIconModule,
     HttpClientModule,
     MatProgressSpinnerModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [MatIconRegistry],
   bootstrap: [AppComponent]

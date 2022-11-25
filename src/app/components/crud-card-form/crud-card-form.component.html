@@ -1,1 +1,33 @@
-<p>crud-card-form works!</p>
+<div class="form-container">
+  <mat-spinner class="loading-spinner" *ngIf="!isLoaded"></mat-spinner>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="isLoaded">
+    <mat-error *ngIf="error">
+      {{error}}
+    </mat-error>
+    <mat-form-field class="col-sm mt-2">
+      <input matInput type="text" placeholder="Title.." formControlName="title" required>
+    </mat-form-field>
+
+    <mat-form-field class="col-sm mt-2">
+      <input matInput type="text" placeholder="Description.." formControlName="description" required>
+    </mat-form-field>
+
+    <mat-form-field class="col-sm mt-2">
+      <input matInput type="text" placeholder="Image url.." formControlName="imageUrl" required>
+    </mat-form-field>
+
+    <mat-form-field class="col-sm mt-2">
+      <input matInput type="number" placeholder="Attack damage.." formControlName="attackDamage" required>
+    </mat-form-field>
+
+    <mat-form-field class="col-sm mt-2">
+      <input matInput type="number" placeholder="Health Points.." formControlName="healthPoints" required>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">
+      <span *ngIf="!isEdit">Create</span>
+      <span *ngIf="isEdit">Update</span>
+    </button>
+  </form>
+
+</div>

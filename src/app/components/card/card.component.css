@@ -4,3 +4,11 @@ img {
   height: 340px;
   object-fit: cover;
 }
+
+.edit-icon {
+  position: relative;
+  float: right;
+  bottom: 390px;
+  left: 15px;
+  cursor: pointer;
+}

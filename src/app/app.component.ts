@@ -17,6 +17,10 @@ export class AppComponent {
       .bypassSecurityTrustResourceUrl("assets/icons/menu.svg"));
     this.matIconRegistry.addSvgIcon("x", this.domSanitizer
       .bypassSecurityTrustResourceUrl("assets/icons/x.svg"));
+    this.matIconRegistry.addSvgIcon("edit", this.domSanitizer
+      .bypassSecurityTrustResourceUrl("assets/icons/edit.svg"));
+    this.matIconRegistry.addSvgIcon("plus", this.domSanitizer
+      .bypassSecurityTrustResourceUrl("assets/icons/plus.svg"));
   }
 
   toggleMenu() {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Card} from "../../model/card.model";
 import {CardService} from "../../services/card-service.service";
+import {CrudCardFormComponent} from "../crud-card-form/crud-card-form.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-gallery',
@@ -9,23 +11,27 @@ import {CardService} from "../../services/card-service.service";
 })
 export class GalleryComponent implements OnInit {
 
-  isLoaded: boolean = false;
-  cards: Card[] = [
-    {
-      "title": 'Knight',
-      "imageUrl": 'https://cdna.artstation.com/p/assets/images/images/001/840/378/large/gabriel-ramos-gabrielramos-assignment03a3.jpg?1453577748',
-      "description": 'A cursed knight',
-      "attackDamage": 4,
-      "healthPoints": 5
-    }
-  ];
-  constructor(private cardService: CardService) { }
+  isLoaded: boolean;
+  cards: Card[] = [];
+  constructor(private cardService: CardService ,
+              private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.isLoaded = false;
     this.cardService.findAll().subscribe(res => {
       this.cards = res as Card[];
       this.isLoaded = true;
     });
   }
 
+  addNewCard() {
+    let dialogRef = this.dialog.open(CrudCardFormComponent, {width: '500px'});
+    dialogRef.componentInstance.isEdit = false;
+    dialogRef.componentInstance.onClose.subscribe({next: () => {
+        dialogRef.close();
+      }})
+    dialogRef.componentInstance.afterSave.subscribe({next: () => {
+        dialogRef.close();
+      }})
+  }
 }
